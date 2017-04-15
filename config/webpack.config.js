@@ -81,6 +81,8 @@ module.exports = () => {
 				exclude: [/\.(spec|e2e)\.ts$/]
 			},
 
+
+
 			// CSS loader
 			{ test: /\.css$/, loaders: [ 'style-loader', 'css-loader' ] },
 
@@ -113,7 +115,9 @@ module.exports = () => {
 	wpConfig.plugins.push(
 		new webpack.ProvidePlugin({
 			// Declare global libraries here (eg. D3, JQuery, etc)
-			// d3: 'd3'
+			'd3': 'd3',
+			'': 'd3-hexbin',
+			'L': 'leaflet'
 		}),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',

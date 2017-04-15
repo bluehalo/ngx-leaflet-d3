@@ -66,7 +66,7 @@ gulp.task('build-ts', () => {
 						? null
 						: new plugins.util.PluginError(
 							'ngc',
-							`${gutil.colors.red('Compilation error.')}\nSee details in the ngc output`,
+							`${plugins.util.colors.red('Compilation error.')}\nSee details in the ngc output`,
 							{fileName: file.path});
 
 					callback(err, file);
@@ -91,7 +91,12 @@ gulp.task('rollup-js', () => {
 	return rollup.rollup({
 			entry: path.posix.join(assets.dist.dir, '/index.js'),
 			external: [
-				'@angular/core'
+				'@angular/core',
+				'd3',
+				'leaflet',
+				'rxjs',
+				'@asymmetrik/leaflet-d3',
+				'@asymmetrik/angular2-leaflet'
 			],
 			onwarn: (warning) => {
 				if ('THIS_IS_UNDEFINED' === warning.code) {
@@ -104,11 +109,16 @@ gulp.task('rollup-js', () => {
 			return bundle.write({
 				dest: path.posix.join(assets.dist.bundleDir, `${pkg.artifactName}.js`),
 				format: 'umd',
-				moduleName: 'angular2Template',
+				moduleName: pkg.moduleName,
 				sourceMap: true,
 				banner: bannerString,
 				globals: {
-					'@angular/core': 'ng.core'
+					'@angular/core': 'ng.core',
+					'd3': 'd3',
+					'leaflet': 'L',
+					'rxjs': 'Rx',
+					'@asymmetrik/leaflet-d3': 'leafletD3',
+					'@asymmetrik/angular2-leaflet': 'angular2Leaflet'
 				}
 			});
 		});
