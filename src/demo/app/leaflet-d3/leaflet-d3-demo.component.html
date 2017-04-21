@@ -2,26 +2,16 @@
 
 	<div class="row">
 
-		<!-- Control Form -->
-		<div class="col-sm-12 col-md-6 col-lg-4">
+		<h2>Hexbins</h2>
+		<hexbin-demo></hexbin-demo>
 
-			<form class="form-horizontal">
-				<button type="button" class="btn btn-default" (click)="generateHexbinData()">Apply</button>
-			</form>
+	</div>
 
-		</div>
 
-		<!-- Map -->
-		<div class="col-md-12" style="margin-top:16px;">
+	<div class="row">
 
-			<div leaflet style="height: 300px;"
-				 [leafletHexbin]="hexbinData"
-				 [leafletOptions]="options"
-				 [leafletBaseLayers]="baseLayers"
-				 [leafletLayersControlOptions]="layersControlOptions">
-			</div>
-
-		</div>
+		<h2>Pings</h2>
+		<ping-demo></ping-demo>
 
 	</div>
 

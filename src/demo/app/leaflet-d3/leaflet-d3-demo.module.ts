@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 
+import { HexbinDemoComponent } from './hexbin/hexbin-demo.component';
+import { PingDemoComponent } from './ping/ping-demo.component';
+
 import { LeafletModule } from '@asymmetrik/angular2-leaflet';
 
 // Local Imports
@@ -12,7 +15,9 @@ import { LeafletD3Module } from '../../../leaflet-d3/leaflet-d3.module';
 		LeafletD3Module
 	],
 	declarations: [
-		LeafletD3DemoComponent
+		HexbinDemoComponent,
+		LeafletD3DemoComponent,
+		PingDemoComponent
 	],
 	exports: [
 		LeafletD3DemoComponent

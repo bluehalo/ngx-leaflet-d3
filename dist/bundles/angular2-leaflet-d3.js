@@ -1,9 +1,9 @@
 /*! @asymmetrik/angular2-leaflet-d3 - 0.0.1 - Copyright Asymmetrik, Ltd. 2007-2017 - All Rights Reserved. + */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@asymmetrik/angular2-leaflet'), require('leaflet'), require('@asymmetrik/leaflet-d3')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@asymmetrik/angular2-leaflet', 'leaflet', '@asymmetrik/leaflet-d3'], factory) :
-	(factory((global.angular2LeafletD3 = global.angular2LeafletD3 || {}),global.ng.core,global.angular2Leaflet,global.L));
-}(this, (function (exports,_angular_core,_asymmetrik_angular2Leaflet,L) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@asymmetrik/angular2-leaflet'), require('leaflet'), require('rxjs'), require('@asymmetrik/leaflet-d3')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@asymmetrik/angular2-leaflet', 'leaflet', 'rxjs', '@asymmetrik/leaflet-d3'], factory) :
+	(factory((global.angular2LeafletD3 = global.angular2LeafletD3 || {}),global.ng.core,global.angular2Leaflet,global.L,global.Rx));
+}(this, (function (exports,_angular_core,_asymmetrik_angular2Leaflet,L,rxjs) { 'use strict';
 
 var LeafletHexbinDirective = (function () {
     function LeafletHexbinDirective(leafletDirective) {
@@ -47,12 +47,35 @@ LeafletHexbinDirective.propDecorators = {
 
 var LeafletPingDirective = (function () {
     function LeafletPingDirective(leafletDirective) {
+        this.pingObserverReady = new _angular_core.EventEmitter();
         this.leafletDirective = new _asymmetrik_angular2Leaflet.LeafletDirectiveWrapper(leafletDirective);
     }
     LeafletPingDirective.prototype.ngOnInit = function () {
+        var _this = this;
         this.leafletDirective.init();
         var map = this.leafletDirective.getMap();
-        this.pingLayer = L.pingLayer().addTo(map);
+        this.pingLayer = L.pingLayer(this.pingOptions).addTo(map);
+        // Handle incoming ping events
+        this.pingSource = rxjs.Observable.create(function (observer) {
+            _this.pingObserver = observer;
+            _this.pingObserverReady.emit(_this.pingObserver);
+        })
+            .subscribe(function (event) {
+            if (null != event) {
+                _this.ping(event.data, event.cssClass);
+            }
+        });
+    };
+    /**
+     * Submit a ping to the ping layer.
+     *
+     * @param data Contains the lat/lon information to generate the ping
+     * @param cssClass Optional parameter specifying the css class to apply to the ping
+     */
+    LeafletPingDirective.prototype.ping = function (data, cssClass) {
+        if (null != this.pingLayer) {
+            this.pingLayer.ping(data, cssClass);
+        }
     };
     return LeafletPingDirective;
 }());
@@ -65,6 +88,10 @@ LeafletPingDirective.decorators = [
 LeafletPingDirective.ctorParameters = function () { return [
     { type: _asymmetrik_angular2Leaflet.LeafletDirective, },
 ]; };
+LeafletPingDirective.propDecorators = {
+    'pingOptions': [{ type: _angular_core.Input, args: ['leafletPingOptions',] },],
+    'pingObserverReady': [{ type: _angular_core.Output, args: ['leafletPingObserver',] },],
+};
 
 var LeafletD3Module = (function () {
     function LeafletD3Module() {

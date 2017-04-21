@@ -116,7 +116,6 @@ module.exports = () => {
 		new webpack.ProvidePlugin({
 			// Declare global libraries here (eg. D3, JQuery, etc)
 			'd3': 'd3',
-			'': 'd3-hexbin',
 			'L': 'leaflet'
 		}),
 		new webpack.optimize.CommonsChunkPlugin({

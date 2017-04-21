@@ -1,0 +1,21 @@
+<!-- Control Form -->
+<div class="col-sm-12 col-md-6 col-lg-4">
+
+	<form class="form-horizontal">
+		<button type="button" class="btn btn-default" (click)="playing = !playing">Toggle Pings</button>
+	</form>
+
+</div>
+
+<!-- Map -->
+<div class="col-md-12" style="margin-top:16px;">
+
+	<div leaflet style="height: 300px;"
+		 leafletPing
+		 (leafletPingObserver)="setLeafletPingObserver($event)"
+		 [leafletOptions]="options"
+		 [leafletBaseLayers]="baseLayers"
+		 [leafletLayersControlOptions]="layersControlOptions">
+	</div>
+
+</div>
