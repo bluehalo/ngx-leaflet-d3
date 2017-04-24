@@ -1,4 +1,4 @@
-import { Directive, Input, OnChanges, OnInit, SimpleChange } from '@angular/core';
+import { Directive, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange } from '@angular/core';
 
 import * as L from 'leaflet';
 
@@ -12,12 +12,21 @@ export class LeafletHexbinDirective
 	implements OnChanges, OnInit {
 
 	leafletDirective: LeafletDirectiveWrapper;
-
 	hexbinLayer: L.HexbinLayer;
 
+	// Hexbin data binding
 	@Input('leafletHexbin') hexbinData: any[] = [];
 
+	// Options binding
 	@Input('leafletHexbinOptions') hexbinOptions: L.HexbinLayerConfig;
+
+	// Interaction events
+	@Output('leafletHexbinMouseover') hexbinMouseover: EventEmitter<any> = new EventEmitter<any>();
+	@Output('leafletHexbinMouseout') hexbinMouseout: EventEmitter<any> = new EventEmitter<any>();
+	@Output('leafletHexbinClick') hexbinClick: EventEmitter<any> = new EventEmitter<any>();
+
+	// Fired when the layer is created
+	@Output('leafletHexbinLayerReady') layerReady: EventEmitter<L.HexbinLayer> = new EventEmitter<L.HexbinLayer>();
 
 	constructor(leafletDirective: LeafletDirective) {
 		this.leafletDirective = new LeafletDirectiveWrapper(leafletDirective);
@@ -28,7 +37,17 @@ export class LeafletHexbinDirective
 		this.leafletDirective.init();
 
 		let map = this.leafletDirective.getMap();
-		this.hexbinLayer = L.hexbinLayer(this.hexbinOptions).addTo(map);
+		this.hexbinLayer = L.hexbinLayer(this.hexbinOptions);
+
+		// Fire the ready event
+		this.layerReady.emit(this.hexbinLayer);
+
+		// register for the hexbin events
+		this.hexbinLayer.dispatch().on('mouseover', (p: any) => { this.hexbinMouseover.emit(p); });
+		this.hexbinLayer.dispatch().on('mouseout', (p: any) => { this.hexbinMouseout.emit(p); });
+		this.hexbinLayer.dispatch().on('click', (p: any) => { this.hexbinClick.emit(p); });
+
+		this.hexbinLayer.addTo(map);
 
 		// Initialize the data (in case the data was set before the directive was initialized)
 		this.setHexbinData(this.hexbinData);
