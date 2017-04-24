@@ -30,7 +30,7 @@
 		"d3-hexbin": "0.2",
 		"leaflet": "1",
 
-		"@asymmetrik/leaflet-d3": "1",
+		"@asymmetrik/leaflet-d3": "2",
 		"@asymmetrik/angular2-leaflet": "2"
 	},
 
@@ -52,7 +52,7 @@
 		"leaflet": "1.0",
 		"@types/leaflet": "1.0",
 
-		"@asymmetrik/leaflet-d3": "1",
+		"@asymmetrik/leaflet-d3": "2",
 		"@asymmetrik/angular2-leaflet": "2",
 
 		"core-js": "2.4",

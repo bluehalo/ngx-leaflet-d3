@@ -11,10 +11,12 @@
 <div class="col-md-12" style="margin-top:16px;">
 
 	<div leaflet style="height: 300px;"
-		 [leafletHexbin]="hexbinData"
 		 [leafletOptions]="options"
 		 [leafletBaseLayers]="baseLayers"
-		 [leafletLayersControlOptions]="layersControlOptions">
+		 [leafletLayersControlOptions]="layersControlOptions"
+		 [leafletHexbin]="hexbinData"
+		 [leafletHexbinOptions]="hexbinOptions"
+		 (leafletHexbinLayerReady)="layerReady($event)">
 	</div>
 
 </div>

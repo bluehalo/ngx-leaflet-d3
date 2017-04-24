@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as d3 from 'd3';
+import * as L from 'leaflet';
 
 import './hexbin-demo.component.scss';
 
@@ -36,13 +37,23 @@ implements OnInit {
 	generateLat = d3.randomNormal(this.options.center.lat, 1);
 	generateLon = d3.randomNormal(this.options.center.lng, 1);
 
-
+	hexbinOptions: L.HexbinLayerConfig = {
+		radius: 12,
+		radiusRange: [ 4, 11 ]
+	};
+	hexbinLayer: L.HexbinLayer;
 	hexbinData: [ number, number ][] = [];
 
 	ngOnInit() {
 
 		this.generateHexbinData();
 
+	}
+
+	layerReady(layer: L.HexbinLayer) {
+		this.hexbinLayer = layer;
+		this.hexbinLayer
+			.radiusValue((d) => { return d.length; });
 	}
 
 	// Generate a new data array for display
