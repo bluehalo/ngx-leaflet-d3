@@ -3,7 +3,7 @@
 	"artifactName": "angular2-leaflet-d3",
 	"moduleName": "angular2LeafletD3",
 	"description": "Angular 2 D3 visualization components for Leaflet",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": "Asymmetrik, Ltd.",
 	"copyright": "Copyright Asymmetrik, Ltd. 2007-2017 - All Rights Reserved.",
 	"license": "MIT",

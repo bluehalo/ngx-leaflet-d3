@@ -1,4 +1,4 @@
-# @asymmetrik/angular2-leaflet-draw
+# @asymmetrik/angular2-leaflet-d3
 
 [![Build Status][travis-image]][travis-url]
 
@@ -22,6 +22,7 @@ npm install d3
 npm install leaflet
 npm install @asymmetrik/leaflet-d3
 npm install @asymmetrik/angular2-leaflet
+npm install @asymmetrik/angular2-leaflet-d3
 ```
 
 If you intend to use this library in a typescript project (utilizing the typings), you will need to also install the leaflet typings via npm:
@@ -37,19 +38,41 @@ If you want to run the demo, clone the repository, perform an ```npm install```,
 
 This plugin is used with the [Angular 2 Leaflet plugin](https://github.com/Asymmetrik/angular2-leaflet).
 
-To create a map, use the ```leaflet``` attribute directive. This directive must appear first.
-You must specify an initial zoom/center and set of layers either via ```leafletOptions``` or by binding to ```leafletZoom```, ```leafletCenter```, and ```leafletLayers```.
+### Hexbins
+To create a hexbin layer on a map, use the ```leafletHexbin``` attribute directive. This directive must appear after the ```leaflet``` directive.
+This attribute directive also acts as an input binding for the hexbin data array. 
 
 ```html
-<div leaflet style="height: 400px;"
-     XXX
-     [leafletOptions]="options"
-     [leafletDrawOptions]="drawOptions">
+<div leaflet style="height: 300px;"
+	 [leafletOptions]="options"
+	 [leafletHexbin]="hexbinData"
 </div>
 ```
 
-### XXX
-blah blah 
+See the README for @asymmetrik/leaflet-d3 for details regarding the default options and default data schema.
+
+
+### Pings
+To create a ping layer on a map, use the ```leafletPing``` attribute directive. This directive must appear after the ```leaflet``` directive.
+
+```html
+<div leaflet style="height: 300px;"
+     [leafletOptions]="options"
+     leafletPing
+     (leafletPingObserver)="setLeafletPingObserver($event)">
+</div>
+```
+
+The output binding for ```leafletPingObserver``` provides an Rxjs Observer that you will use to emit ping objects to the directive.
+
+
+## API
+
+### Hexbins
+
+
+### Pings
+
 
 
 ## Contribute
