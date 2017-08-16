@@ -37,35 +37,40 @@ implements OnInit {
 	generateLat = d3.randomNormal(this.options.center.lat, 1);
 	generateLon = d3.randomNormal(this.options.center.lng, 1);
 
-	hexbinOptions: L.HexbinLayerConfig = {
-		radius: 12,
-		radiusRange: [ 4, 11 ]
-	};
-	hexbinLayer: L.HexbinLayer;
-	hexbinData: [ number, number ][] = [];
+	hexbinOptions1: L.HexbinLayerConfig = { radius: 12,	radiusRange: [ 4, 11 ],	colorRange: [ 'white', 'tomato' ] };
+	hexbinOptions2: L.HexbinLayerConfig = { radius: 12,	radiusRange: [ 4, 11 ],	colorRange: [ 'white', 'steelblue' ] };
+	hexbinOptions3: L.HexbinLayerConfig = { radius: 12,	radiusRange: [ 4, 11 ],	colorRange: [ 'white', 'teal' ] };
+
+	hexbinData1: [ number, number ][] = [];
+	hexbinData2: [ number, number ][] = [];
+	hexbinData3: [ number, number ][] = [];
 
 	ngOnInit() {
-
 		this.generateHexbinData();
+	}
+
+	generateHexbinData() {
+
+		this.hexbinData1 = this.generateSeries(-5);
+		this.hexbinData2 = this.generateSeries(0);
+		this.hexbinData3 = this.generateSeries(5);
 
 	}
 
 	layerReady(layer: L.HexbinLayer) {
-		this.hexbinLayer = layer;
-		this.hexbinLayer
-			.radiusValue((d) => { return d.length; });
+		layer.radiusValue((d) => { return d.length; });
 	}
 
 	// Generate a new data array for display
-	generateHexbinData() {
+	generateSeries(skew: number) {
 
 		let data: [ number, number ][] = [];
 
 		for (let i = 0; i < 1000; i++) {
-			data.push([ this.generateLon(), this.generateLat() ]);
+			data.push([ this.generateLon() + skew, this.generateLat() ]);
 		}
 
-		this.hexbinData = data;
+		return data;
 
 	}
 
