@@ -13,10 +13,12 @@
 	<div leaflet style="height: 300px;"
 		 [leafletOptions]="options"
 		 [leafletBaseLayers]="baseLayers"
-		 [leafletLayersControlOptions]="layersControlOptions"
-		 [leafletHexbin]="hexbinData"
-		 [leafletHexbinOptions]="hexbinOptions"
-		 (leafletHexbinLayerReady)="layerReady($event)">
+		 [leafletLayersControlOptions]="layersControlOptions">
+
+		<div [leafletHexbin]="hexbinData1" [leafletHexbinOptions]="hexbinOptions1" (leafletHexbinLayerReady)="layerReady($event)"></div>
+		<div [leafletHexbin]="hexbinData2" [leafletHexbinOptions]="hexbinOptions2" (leafletHexbinLayerReady)="layerReady($event)"></div>
+		<div [leafletHexbin]="hexbinData3" [leafletHexbinOptions]="hexbinOptions3" (leafletHexbinLayerReady)="layerReady($event)"></div>
+
 	</div>
 
 </div>

@@ -133,6 +133,7 @@ gulp.task('webpack-dev-server', (done) => {
 	// Start a webpack-dev-server
 	let webpackConfig = require('./config/webpack.config.js')();
 	let compiler = webpack(webpackConfig);
+	let port = 9000;
 
 	new webpackDevServer(compiler, {
 		stats: {
@@ -143,11 +144,11 @@ gulp.task('webpack-dev-server', (done) => {
 			aggregateTimeout: 300,
 			poll: 1000
 		},
-	}).listen(9000, 'localhost', (err) => {
+	}).listen(port, 'localhost', (err) => {
 		if(err) throw new plugins.util.PluginError('webpack', err);
 
 		// Server listening
-		plugins.util.log('[webpack]', 'http://localhost:9000/webpack-dev-server/index.html');
+		plugins.util.log('[webpack]', `http://localhost:${port}/webpack-dev-server/index.html`);
 	});
 });
 

@@ -3,7 +3,7 @@
 	"artifactName": "angular2-leaflet-d3",
 	"moduleName": "angular2LeafletD3",
 	"description": "Angular 2 D3 visualization components for Leaflet",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": "Asymmetrik, Ltd.",
 	"copyright": "Copyright Asymmetrik, Ltd. 2007-2017 - All Rights Reserved.",
 	"license": "MIT",
@@ -30,7 +30,7 @@
 		"d3-hexbin": "0.2",
 		"leaflet": "1",
 
-		"@asymmetrik/leaflet-d3": "2",
+		"@asymmetrik/leaflet-d3": "3",
 		"@asymmetrik/angular2-leaflet": "2"
 	},
 
@@ -45,14 +45,14 @@
 
 		"bootstrap": "3",
 
-		"d3": "4.6",
-		"@types/d3": "4.5",
+		"d3": "4.10",
+		"@types/d3": "4.10",
 		"d3-hexbin": "0.2",
 
-		"leaflet": "1.0",
-		"@types/leaflet": "1.0",
+		"leaflet": "1",
+		"@types/leaflet": "1",
 
-		"@asymmetrik/leaflet-d3": "2",
+		"@asymmetrik/leaflet-d3": "3",
 		"@asymmetrik/angular2-leaflet": "2",
 
 		"core-js": "2.4",
@@ -68,16 +68,16 @@
 		"tslint": "4.5",
 		"tslint-stylish": "2.1",
 
-		"webpack": "2.3",
-		"webpack-dev-server": "2.4",
+		"webpack": "2",
+		"webpack-dev-server": "2",
 		"angular2-template-loader": "0.6",
 		"css-loader": "0.27",
 		"file-loader": "0.10",
 		"html-loader": "0.4",
-		"resolve-url-loader": "2.0",
-		"sass-loader": "6.0",
+		"resolve-url-loader": "2",
+		"sass-loader": "6",
 		"style-loader": "0.16",
-		"awesome-typescript-loader": "3.1",
+		"awesome-typescript-loader": "3",
 		"url-loader": "0.5",
 
 		"gulp": "3.9",
