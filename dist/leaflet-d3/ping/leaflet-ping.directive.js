@@ -2,7 +2,7 @@ import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as L from 'leaflet';
 import '@asymmetrik/leaflet-d3';
-import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/angular2-leaflet';
+import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
 var LeafletPingDirective = (function () {
     function LeafletPingDirective(leafletDirective) {
         this.pingObserverReady = new EventEmitter();
