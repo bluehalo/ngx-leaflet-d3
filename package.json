@@ -1,9 +1,9 @@
 {
-	"name": "@asymmetrik/angular2-leaflet-d3",
-	"artifactName": "angular2-leaflet-d3",
-	"moduleName": "angular2LeafletD3",
+	"name": "@asymmetrik/ngx-leaflet-d3",
+	"artifactName": "ngx-leaflet-d3",
+	"moduleName": "ngxLeafletD3",
 	"description": "Angular 2 D3 visualization components for Leaflet",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"author": "Asymmetrik, Ltd.",
 	"copyright": "Copyright Asymmetrik, Ltd. 2007-2017 - All Rights Reserved.",
 	"license": "MIT",
@@ -13,13 +13,13 @@
 		"dev": "gulp dev"
 	},
 
-	"main": "dist/bundles/angular2-leaflet-d3.js",
+	"main": "dist/bundles/ngx-leaflet-d3.js",
 	"module": "dist/index.js",
 	"typings": "dist/index.d.ts",
 
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Asymmetrik/angular2-leaflet-d3.git"
+		"url": "https://github.com/Asymmetrik/ngx-leaflet-d3.git"
 	},
 
 	"peerDependencies": {
@@ -31,7 +31,7 @@
 		"leaflet": "1",
 
 		"@asymmetrik/leaflet-d3": "3",
-		"@asymmetrik/angular2-leaflet": "2"
+		"@asymmetrik/ngx-leaflet": "2"
 	},
 
 	"devDependencies": {
@@ -53,7 +53,7 @@
 		"@types/leaflet": "1",
 
 		"@asymmetrik/leaflet-d3": "3",
-		"@asymmetrik/angular2-leaflet": "2",
+		"@asymmetrik/ngx-leaflet": "2",
 
 		"core-js": "2.4",
 

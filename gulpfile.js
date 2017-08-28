@@ -96,7 +96,7 @@ gulp.task('rollup-js', () => {
 				'leaflet',
 				'rxjs',
 				'@asymmetrik/leaflet-d3',
-				'@asymmetrik/angular2-leaflet'
+				'@asymmetrik/ngx-leaflet'
 			],
 			onwarn: (warning) => {
 				if ('THIS_IS_UNDEFINED' === warning.code) {
@@ -118,7 +118,7 @@ gulp.task('rollup-js', () => {
 					'leaflet': 'L',
 					'rxjs': 'Rx',
 					'@asymmetrik/leaflet-d3': 'leafletD3',
-					'@asymmetrik/angular2-leaflet': 'angular2Leaflet'
+					'@asymmetrik/ngx-leaflet': 'ngxLeaflet'
 				}
 			});
 		});

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { LeafletModule } from '@asymmetrik/angular2-leaflet';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletHexbinDirective } from './hexbin/leaflet-hexbin.directive';
 import { LeafletPingDirective } from './ping/leaflet-ping.directive';
 var LeafletD3Module = (function () {

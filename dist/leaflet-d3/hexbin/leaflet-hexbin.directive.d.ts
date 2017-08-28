@@ -1,6 +1,6 @@
 import { EventEmitter, OnChanges, OnInit, SimpleChange } from '@angular/core';
 import * as L from 'leaflet';
-import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/angular2-leaflet';
+import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
 export declare class LeafletHexbinDirective implements OnChanges, OnInit {
     leafletDirective: LeafletDirectiveWrapper;
     hexbinLayer: L.HexbinLayer;

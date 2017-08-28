@@ -1,6 +1,6 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import * as L from 'leaflet';
-import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/angular2-leaflet';
+import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
 var LeafletHexbinDirective = (function () {
     function LeafletHexbinDirective(leafletDirective) {
         // Hexbin data binding

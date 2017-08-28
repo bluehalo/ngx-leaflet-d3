@@ -1,9 +1,9 @@
-/*! @asymmetrik/angular2-leaflet-d3 - 0.0.3 - Copyright Asymmetrik, Ltd. 2007-2017 - All Rights Reserved. + */
+/*! @asymmetrik/ngx-leaflet-d3 - 0.1.0 - Copyright Asymmetrik, Ltd. 2007-2017 - All Rights Reserved. + */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@asymmetrik/angular2-leaflet'), require('leaflet'), require('rxjs'), require('@asymmetrik/leaflet-d3')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@asymmetrik/angular2-leaflet', 'leaflet', 'rxjs', '@asymmetrik/leaflet-d3'], factory) :
-	(factory((global.angular2LeafletD3 = global.angular2LeafletD3 || {}),global.ng.core,global.angular2Leaflet,global.L,global.Rx));
-}(this, (function (exports,_angular_core,_asymmetrik_angular2Leaflet,L,rxjs) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@asymmetrik/ngx-leaflet'), require('leaflet'), require('rxjs'), require('@asymmetrik/leaflet-d3')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@asymmetrik/ngx-leaflet', 'leaflet', 'rxjs', '@asymmetrik/leaflet-d3'], factory) :
+	(factory((global.ngxLeafletD3 = global.ngxLeafletD3 || {}),global.ng.core,global.ngxLeaflet,global.L,global.Rx));
+}(this, (function (exports,_angular_core,_asymmetrik_ngxLeaflet,L,rxjs) { 'use strict';
 
 var LeafletHexbinDirective = (function () {
     function LeafletHexbinDirective(leafletDirective) {
@@ -15,7 +15,7 @@ var LeafletHexbinDirective = (function () {
         this.hexbinClick = new _angular_core.EventEmitter();
         // Fired when the layer is created
         this.layerReady = new _angular_core.EventEmitter();
-        this.leafletDirective = new _asymmetrik_angular2Leaflet.LeafletDirectiveWrapper(leafletDirective);
+        this.leafletDirective = new _asymmetrik_ngxLeaflet.LeafletDirectiveWrapper(leafletDirective);
     }
     LeafletHexbinDirective.prototype.ngOnInit = function () {
         var _this = this;
@@ -53,7 +53,7 @@ LeafletHexbinDirective.decorators = [
 ];
 /** @nocollapse */
 LeafletHexbinDirective.ctorParameters = function () { return [
-    { type: _asymmetrik_angular2Leaflet.LeafletDirective, },
+    { type: _asymmetrik_ngxLeaflet.LeafletDirective, },
 ]; };
 LeafletHexbinDirective.propDecorators = {
     'hexbinData': [{ type: _angular_core.Input, args: ['leafletHexbin',] },],
@@ -67,7 +67,7 @@ LeafletHexbinDirective.propDecorators = {
 var LeafletPingDirective = (function () {
     function LeafletPingDirective(leafletDirective) {
         this.pingObserverReady = new _angular_core.EventEmitter();
-        this.leafletDirective = new _asymmetrik_angular2Leaflet.LeafletDirectiveWrapper(leafletDirective);
+        this.leafletDirective = new _asymmetrik_ngxLeaflet.LeafletDirectiveWrapper(leafletDirective);
     }
     LeafletPingDirective.prototype.ngOnInit = function () {
         var _this = this;
@@ -105,7 +105,7 @@ LeafletPingDirective.decorators = [
 ];
 /** @nocollapse */
 LeafletPingDirective.ctorParameters = function () { return [
-    { type: _asymmetrik_angular2Leaflet.LeafletDirective, },
+    { type: _asymmetrik_ngxLeaflet.LeafletDirective, },
 ]; };
 LeafletPingDirective.propDecorators = {
     'pingOptions': [{ type: _angular_core.Input, args: ['leafletPingOptions',] },],
@@ -123,7 +123,7 @@ var LeafletD3Module = (function () {
 LeafletD3Module.decorators = [
     { type: _angular_core.NgModule, args: [{
                 imports: [
-                    _asymmetrik_angular2Leaflet.LeafletModule
+                    _asymmetrik_ngxLeaflet.LeafletModule
                 ],
                 exports: [
                     LeafletHexbinDirective,
@@ -143,4 +143,4 @@ exports.LeafletD3Module = LeafletD3Module;
 Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=angular2-leaflet-d3.js.map
+//# sourceMappingURL=ngx-leaflet-d3.js.map

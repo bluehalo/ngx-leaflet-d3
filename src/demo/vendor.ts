@@ -10,9 +10,9 @@
  *
  *   Global Imports - Dependencies that are not polyfills, but are not directly imported elsewhere in the app
  *
- *   Angular2 Imports - All @angular dependencies
+ *   Angular Imports - All @angular dependencies
  *
- *   Angular2 Third-Party - All angular-specific third-party dependencies
+ *   Angular Third-Party - All angular-specific third-party dependencies
  *
  *   Other Dependencies - All other third-party dependencies
  */
@@ -35,7 +35,7 @@ import 'd3-hexbin';
 import '@asymmetrik/leaflet-d3';
 
 
-// Angular2 Imports
+// Angular Imports
 import '@angular/common';
 import '@angular/core';
 import '@angular/platform-browser';
@@ -43,8 +43,8 @@ import '@angular/platform-browser-dynamic';
 import '@angular/router';
 
 
-// Angular2 Third-Party
-import '@asymmetrik/angular2-leaflet';
+// Angular Third-Party
+import '@asymmetrik/ngx-leaflet';
 
 
 // Other Dependencies

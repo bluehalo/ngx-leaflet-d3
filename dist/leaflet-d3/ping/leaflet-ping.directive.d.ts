@@ -2,7 +2,7 @@ import { EventEmitter, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 import * as L from 'leaflet';
 import '@asymmetrik/leaflet-d3';
-import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/angular2-leaflet';
+import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
 import { LeafletPingEvent } from '../../leaflet-d3/ping/leaflet-ping-event.model';
 export declare class LeafletPingDirective implements OnInit {
     leafletDirective: LeafletDirectiveWrapper;
