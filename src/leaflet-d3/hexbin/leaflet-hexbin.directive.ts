@@ -36,7 +36,7 @@ export class LeafletHexbinDirective
 
 		this.leafletDirective.init();
 
-		let map = this.leafletDirective.getMap();
+		const map = this.leafletDirective.getMap();
 		this.hexbinLayer = L.hexbinLayer(this.hexbinOptions);
 
 		// Fire the ready event

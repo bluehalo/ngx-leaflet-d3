@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 
 import { Observer } from 'rxjs';
+
 import * as d3 from 'd3';
+import * as L from 'leaflet';
 
 import './ping-demo.component.scss';
 

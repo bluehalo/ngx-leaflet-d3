@@ -1,4 +1,4 @@
-var LeafletPingEvent = (function () {
+var LeafletPingEvent = /** @class */ (function () {
     function LeafletPingEvent() {
     }
     return LeafletPingEvent;

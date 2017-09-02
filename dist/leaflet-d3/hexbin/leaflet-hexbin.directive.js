@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import * as L from 'leaflet';
 import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
-var LeafletHexbinDirective = (function () {
+var LeafletHexbinDirective = /** @class */ (function () {
     function LeafletHexbinDirective(leafletDirective) {
         // Hexbin data binding
         this.hexbinData = [];
@@ -40,24 +40,24 @@ var LeafletHexbinDirective = (function () {
             this.hexbinLayer.data(data);
         }
     };
+    LeafletHexbinDirective.decorators = [
+        { type: Directive, args: [{
+                    selector: '[leafletHexbin]'
+                },] },
+    ];
+    /** @nocollapse */
+    LeafletHexbinDirective.ctorParameters = function () { return [
+        { type: LeafletDirective, },
+    ]; };
+    LeafletHexbinDirective.propDecorators = {
+        'hexbinData': [{ type: Input, args: ['leafletHexbin',] },],
+        'hexbinOptions': [{ type: Input, args: ['leafletHexbinOptions',] },],
+        'hexbinMouseover': [{ type: Output, args: ['leafletHexbinMouseover',] },],
+        'hexbinMouseout': [{ type: Output, args: ['leafletHexbinMouseout',] },],
+        'hexbinClick': [{ type: Output, args: ['leafletHexbinClick',] },],
+        'layerReady': [{ type: Output, args: ['leafletHexbinLayerReady',] },],
+    };
     return LeafletHexbinDirective;
 }());
 export { LeafletHexbinDirective };
-LeafletHexbinDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[leafletHexbin]'
-            },] },
-];
-/** @nocollapse */
-LeafletHexbinDirective.ctorParameters = function () { return [
-    { type: LeafletDirective, },
-]; };
-LeafletHexbinDirective.propDecorators = {
-    'hexbinData': [{ type: Input, args: ['leafletHexbin',] },],
-    'hexbinOptions': [{ type: Input, args: ['leafletHexbinOptions',] },],
-    'hexbinMouseover': [{ type: Output, args: ['leafletHexbinMouseover',] },],
-    'hexbinMouseout': [{ type: Output, args: ['leafletHexbinMouseout',] },],
-    'hexbinClick': [{ type: Output, args: ['leafletHexbinClick',] },],
-    'layerReady': [{ type: Output, args: ['leafletHexbinLayerReady',] },],
-};
 //# sourceMappingURL=leaflet-hexbin.directive.js.map

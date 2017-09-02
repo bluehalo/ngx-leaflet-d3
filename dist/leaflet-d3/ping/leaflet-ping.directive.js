@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import * as L from 'leaflet';
 import '@asymmetrik/leaflet-d3';
 import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
-var LeafletPingDirective = (function () {
+var LeafletPingDirective = /** @class */ (function () {
     function LeafletPingDirective(leafletDirective) {
         this.pingObserverReady = new EventEmitter();
         this.leafletDirective = new LeafletDirectiveWrapper(leafletDirective);
@@ -35,20 +35,20 @@ var LeafletPingDirective = (function () {
             this.pingLayer.ping(data, cssClass);
         }
     };
+    LeafletPingDirective.decorators = [
+        { type: Directive, args: [{
+                    selector: '[leafletPing]'
+                },] },
+    ];
+    /** @nocollapse */
+    LeafletPingDirective.ctorParameters = function () { return [
+        { type: LeafletDirective, },
+    ]; };
+    LeafletPingDirective.propDecorators = {
+        'pingOptions': [{ type: Input, args: ['leafletPingOptions',] },],
+        'pingObserverReady': [{ type: Output, args: ['leafletPingObserver',] },],
+    };
     return LeafletPingDirective;
 }());
 export { LeafletPingDirective };
-LeafletPingDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[leafletPing]'
-            },] },
-];
-/** @nocollapse */
-LeafletPingDirective.ctorParameters = function () { return [
-    { type: LeafletDirective, },
-]; };
-LeafletPingDirective.propDecorators = {
-    'pingOptions': [{ type: Input, args: ['leafletPingOptions',] },],
-    'pingObserverReady': [{ type: Output, args: ['leafletPingObserver',] },],
-};
 //# sourceMappingURL=leaflet-ping.directive.js.map
