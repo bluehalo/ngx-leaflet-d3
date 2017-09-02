@@ -49,8 +49,8 @@
 		"@types/d3": "4.10",
 		"d3-hexbin": "0.2",
 
-		"leaflet": "1",
-		"@types/leaflet": "1",
+		"leaflet": "1.2",
+		"@types/leaflet": "1.2",
 
 		"@asymmetrik/leaflet-d3": "3",
 		"@asymmetrik/ngx-leaflet": "2",
@@ -64,7 +64,7 @@
 		"merge2": "1.1",
 		"rollup": "0.49",
 
-		"typescript": "2.3",
+		"typescript": "2.5",
 		"tslint": "5.7",
 		"tslint-stylish": "2.1",
 
