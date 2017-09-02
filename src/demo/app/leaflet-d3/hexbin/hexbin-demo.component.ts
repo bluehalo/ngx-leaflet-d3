@@ -58,13 +58,13 @@ implements OnInit {
 	}
 
 	layerReady(layer: L.HexbinLayer) {
-		layer.radiusValue((d) => { return d.length; });
+		layer.radiusValue((d) => d.length);
 	}
 
 	// Generate a new data array for display
 	generateSeries(skew: number) {
 
-		let data: [ number, number ][] = [];
+		const data: [ number, number ][] = [];
 
 		for (let i = 0; i < 1000; i++) {
 			data.push([ this.generateLon() + skew, this.generateLat() ]);

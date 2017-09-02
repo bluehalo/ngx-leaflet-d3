@@ -33,7 +33,7 @@ export class LeafletPingDirective
 
 		this.leafletDirective.init();
 
-		let map = this.leafletDirective.getMap();
+		const map = this.leafletDirective.getMap();
 		this.pingLayer = L.pingLayer(this.pingOptions).addTo(map);
 
 		// Handle incoming ping events

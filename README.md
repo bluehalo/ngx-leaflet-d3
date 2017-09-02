@@ -7,7 +7,7 @@
 
 
 > @asymmetrik/leaflet-d3 extension to the @asymmetrik/ngx-leaflet package for Angular 2+
-> Provides @asymmetrik/leaflet-d3 integration into Angular 2 projects. Compatible with Leaflet v1.0.x and @asymmetrik/leaflet-d3 v3.x
+> Provides @asymmetrik/leaflet-d3 integration into Angular 2 projects. Compatible with Leaflet v1.x and @asymmetrik/leaflet-d3 v3.x
 
 > Now supports Angular v4, Ahead-of-Time compilation (AOT), and use in Angular-CLI based projects
 
@@ -163,7 +163,7 @@ This provides an opportunity to do any advanced configuration not already suppor
 There is an input binding and an output binding for the ping layer.
 They are documented and demonstrated below.
 
-```js
+```html
 <div leaflet style="height: 300px;"
      [leafletOptions]="options"
      leafletPing

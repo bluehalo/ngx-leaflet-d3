@@ -79,7 +79,8 @@ gulp.task('build-js', ['rollup-js'], () => {
 
 	// Uglify
 	return gulp.src(path.posix.join(assets.dist.bundleDir, `${pkg.artifactName}.js`))
-		.pipe(plugins.uglify({ preserveComments: 'license' }))
+		.pipe(plugins.uglify({ output: { comments: 'license' } }))
+		.on('error', (err) => { plugins.util.log(plugins.util.colors.red('[Uglify]'), err.toString()); })
 		.pipe(plugins.rename(pkg.artifactName + '.min.js'))
 		.pipe(gulp.dest(assets.dist.bundleDir));
 
@@ -89,7 +90,7 @@ gulp.task('build-js', ['rollup-js'], () => {
 gulp.task('rollup-js', () => {
 
 	return rollup.rollup({
-			entry: path.posix.join(assets.dist.dir, '/index.js'),
+			input: path.posix.join(assets.dist.dir, '/index.js'),
 			external: [
 				'@angular/core',
 				'd3',
@@ -107,10 +108,10 @@ gulp.task('rollup-js', () => {
 		})
 		.then((bundle) => {
 			return bundle.write({
-				dest: path.posix.join(assets.dist.bundleDir, `${pkg.artifactName}.js`),
+				file: path.posix.join(assets.dist.bundleDir, `${pkg.artifactName}.js`),
 				format: 'umd',
-				moduleName: pkg.moduleName,
-				sourceMap: true,
+				name: pkg.moduleName,
+				sourcemap: true,
 				banner: bannerString,
 				globals: {
 					'@angular/core': 'ng.core',
@@ -137,11 +138,11 @@ gulp.task('webpack-dev-server', (done) => {
 
 	new webpackDevServer(compiler, {
 		stats: {
-			colors: true,
-			chunks: false
+			modules: false,
+			colors: true
 		},
 		watchOptions: {
-			aggregateTimeout: 300,
+			aggregateTimeout: 500,
 			poll: 1000
 		},
 	}).listen(port, 'localhost', (err) => {
