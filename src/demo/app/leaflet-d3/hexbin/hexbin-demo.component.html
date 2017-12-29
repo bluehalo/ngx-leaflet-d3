@@ -1,5 +1,5 @@
 <!-- Control Form -->
-<div class="col-sm-12 col-md-6 col-lg-4">
+<div class="col-md-12" style="padding-bottom: 16px;">
 
 	<form class="form-horizontal">
 		<button type="button" class="btn btn-default" (click)="generateHexbinData()">Generate Data</button>
@@ -8,16 +8,16 @@
 </div>
 
 <!-- Map -->
-<div class="col-md-12" style="margin-top:16px;">
-
+<div class="col-md-12">
+	{{count}} events
 	<div leaflet style="height: 300px;"
 		 [leafletOptions]="options"
 		 [leafletBaseLayers]="baseLayers"
 		 [leafletLayersControlOptions]="layersControlOptions">
 
-		<div [leafletHexbin]="hexbinData1" [leafletHexbinOptions]="hexbinOptions1" (leafletHexbinLayerReady)="layerReady($event)"></div>
-		<div [leafletHexbin]="hexbinData2" [leafletHexbinOptions]="hexbinOptions2" (leafletHexbinLayerReady)="layerReady($event)"></div>
-		<div [leafletHexbin]="hexbinData3" [leafletHexbinOptions]="hexbinOptions3" (leafletHexbinLayerReady)="layerReady($event)"></div>
+		<div [leafletHexbin]="hexbinData1" [leafletHexbinOptions]="hexbinOptions1" (leafletHexbinLayerReady)="layerReady($event)" (leafletHexbinMouseover)="count = $event.length" (leafletHexbinMouseout)="count = 0"></div>
+		<div [leafletHexbin]="hexbinData2" [leafletHexbinOptions]="hexbinOptions2" (leafletHexbinLayerReady)="layerReady($event)" (leafletHexbinMouseover)="count = $event.length" (leafletHexbinMouseout)="count = 0"></div>
+		<div [leafletHexbin]="hexbinData3" [leafletHexbinOptions]="hexbinOptions3" (leafletHexbinLayerReady)="layerReady($event)" (leafletHexbinMouseover)="count = $event.length" (leafletHexbinMouseout)="count = 0"></div>
 
 	</div>
 
