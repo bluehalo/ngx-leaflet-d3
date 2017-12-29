@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Directive, EventEmitter, Input, NgZone, OnInit, Output } from '@angular/core';
 
 import { Observable, Observer } from 'rxjs';
 import * as L from 'leaflet';
@@ -25,7 +25,7 @@ export class LeafletPingDirective
 	pingSource: Observable<LeafletPingEvent>;
 	pingObserver: Observer<LeafletPingEvent>;
 
-	constructor(leafletDirective: LeafletDirective) {
+	constructor(leafletDirective: LeafletDirective, private zone: NgZone) {
 		this.leafletDirective = new LeafletDirectiveWrapper(leafletDirective);
 	}
 
@@ -34,22 +34,26 @@ export class LeafletPingDirective
 		this.leafletDirective.init();
 
 		const map = this.leafletDirective.getMap();
-		this.pingLayer = L.pingLayer(this.pingOptions).addTo(map);
 
-		// Handle incoming ping events
-		this.pingSource = Observable.create((observer: Observer<LeafletPingEvent>) => {
-				this.pingObserver = observer;
-				this.pingObserverReady.emit(this.pingObserver);
-			})
-			.subscribe(
-				(event: LeafletPingEvent) => {
+		this.zone.runOutsideAngular(() => {
+			this.pingLayer = L.pingLayer(this.pingOptions).addTo(map);
 
-					if (null != event) {
-						this.ping(event.data, event.cssClass);
+			// Handle incoming ping events
+			this.pingSource = Observable.create((observer: Observer<LeafletPingEvent>) => {
+					this.pingObserver = observer;
+					this.pingObserverReady.emit(this.pingObserver);
+				})
+				.subscribe(
+					(event: LeafletPingEvent) => {
+
+						if (null != event) {
+							this.ping(event.data, event.cssClass);
+						}
+
 					}
+				);
 
-				}
-			);
+		});
 
 	}
 
@@ -62,7 +66,11 @@ export class LeafletPingDirective
 	ping(data: any, cssClass?: string) {
 
 		if (null != this.pingLayer) {
-			this.pingLayer.ping(data, cssClass);
+
+			this.zone.runOutsideAngular(() => {
+				this.pingLayer.ping(data, cssClass);
+			});
+
 		}
 
 	}

@@ -6,10 +6,11 @@
 [travis-image]: https://travis-ci.org/Asymmetrik/ngx-leaflet-d3.svg
 
 
-> @asymmetrik/leaflet-d3 extension to the @asymmetrik/ngx-leaflet package for Angular 2+
-> Provides @asymmetrik/leaflet-d3 integration into Angular 2 projects. Compatible with Leaflet v1.x and @asymmetrik/leaflet-d3 v3.x
+> @asymmetrik/leaflet-d3 extension to the @asymmetrik/ngx-leaflet package for Angular.io
+> Provides @asymmetrik/leaflet-d3 integration into Angular.io (v2+) projects.
+Compatible with Leaflet v1.x, @asymmetrik/leaflet-d3 v3.x, and d3 v4.x
 
-> Now supports Angular v4, Ahead-of-Time compilation (AOT), and use in Angular-CLI based projects
+> Now supports Angular v5, Ahead-of-Time compilation (AOT), and use in Angular-CLI based projects
 
 ## Table of Contents
 - [Install](#install)
@@ -39,8 +40,7 @@ If you want to run the demo, clone the repository, perform an ```npm install```,
 
 
 ## Usage
-
-This plugin is used with the [Angular 2 Leaflet plugin](https://github.com/Asymmetrik/ngx-leaflet).
+This plugin is used with the [Angular.io Leaflet plugin](https://github.com/Asymmetrik/ngx-leaflet).
 
 ### Hexbins
 Hexbins allow you to aggregate data into bins with a hexagon geometry.

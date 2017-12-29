@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletHexbinDirective } from './hexbin/leaflet-hexbin.directive';
 import { LeafletPingDirective } from './ping/leaflet-ping.directive';

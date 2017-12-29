@@ -1,6 +1,7 @@
-import { Directive, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange } from '@angular/core';
+import { Directive, EventEmitter, Input, NgZone, OnChanges, OnInit, Output, SimpleChange } from '@angular/core';
 
 import * as L from 'leaflet';
+import '@asymmetrik/leaflet-d3';
 
 import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
 
@@ -28,7 +29,7 @@ export class LeafletHexbinDirective
 	// Fired when the layer is created
 	@Output('leafletHexbinLayerReady') layerReady: EventEmitter<L.HexbinLayer> = new EventEmitter<L.HexbinLayer>();
 
-	constructor(leafletDirective: LeafletDirective) {
+	constructor(leafletDirective: LeafletDirective, private zone: NgZone) {
 		this.leafletDirective = new LeafletDirectiveWrapper(leafletDirective);
 	}
 
@@ -37,15 +38,31 @@ export class LeafletHexbinDirective
 		this.leafletDirective.init();
 
 		const map = this.leafletDirective.getMap();
-		this.hexbinLayer = L.hexbinLayer(this.hexbinOptions);
+
+		this.zone.runOutsideAngular(() => {
+			this.hexbinLayer = L.hexbinLayer(this.hexbinOptions);
+		});
 
 		// Fire the ready event
 		this.layerReady.emit(this.hexbinLayer);
 
 		// register for the hexbin events
-		this.hexbinLayer.dispatch().on('mouseover', (p: any) => { this.hexbinMouseover.emit(p); });
-		this.hexbinLayer.dispatch().on('mouseout', (p: any) => { this.hexbinMouseout.emit(p); });
-		this.hexbinLayer.dispatch().on('click', (p: any) => { this.hexbinClick.emit(p); });
+		this.hexbinLayer.dispatch().on('mouseover', (p: any) => {
+			this.zone.run(() => {
+				this.hexbinMouseover.emit(p);
+			});
+
+		});
+		this.hexbinLayer.dispatch().on('mouseout', (p: any) => {
+			this.zone.run(() => {
+				this.hexbinMouseout.emit(p);
+			});
+		});
+		this.hexbinLayer.dispatch().on('click', (p: any) => {
+			this.zone.run(() => {
+				this.hexbinClick.emit(p);
+			});
+		});
 
 		this.hexbinLayer.addTo(map);
 
@@ -67,7 +84,9 @@ export class LeafletHexbinDirective
 
 		// Only if there is a hexbinLayer do we apply the data
 		if (null != this.hexbinLayer) {
-			this.hexbinLayer.data(data);
+			this.zone.runOutsideAngular(() => {
+				this.hexbinLayer.data(data);
+			});
 		}
 
 	}
