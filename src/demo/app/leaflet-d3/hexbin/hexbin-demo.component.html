@@ -1,14 +1,14 @@
 <!-- Control Form -->
-<div class="col-md-12" style="padding-bottom: 16px;">
+<div class="col" style="padding-bottom: 16px;">
 
 	<form class="form-horizontal">
-		<button type="button" class="btn btn-default" (click)="generateHexbinData()">Generate Data</button>
+		<button type="button" class="btn btn-primary" (click)="generateHexbinData()">Generate Data</button>
 	</form>
 
 </div>
 
 <!-- Map -->
-<div class="col-md-12">
+<div class="col">
 	{{count}} events
 	<div leaflet style="height: 300px;"
 		 [leafletOptions]="options"
