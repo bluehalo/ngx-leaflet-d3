@@ -5,38 +5,34 @@
 [travis-url]: https://travis-ci.org/Asymmetrik/ngx-leaflet-d3/
 [travis-image]: https://travis-ci.org/Asymmetrik/ngx-leaflet-d3.svg
 
-
 > @asymmetrik/leaflet-d3 extension to the @asymmetrik/ngx-leaflet package for Angular.io
-> Provides @asymmetrik/leaflet-d3 integration into Angular.io (v2+) projects.
-Compatible with Leaflet v1.x, @asymmetrik/leaflet-d3 v3.x, and d3 v4.x
+> Provides @asymmetrik/leaflet-d3 integration into Angular.io projects.
+> Compatible with Leaflet v1.x, @asymmetrik/leaflet-d3 v4.x, and d3 v5.x
 
-> Now supports Angular v5, Ahead-of-Time compilation (AOT), and use in Angular-CLI based projects
+> Now supports Angular v7, Ahead-of-Time compilation (AOT), and use in Angular-CLI based projects
 
 ## Table of Contents
 - [Install](#install)
 - [Usage](#usage)
 - [API](#api)
+- [Changelog](#changelog)
 - [Contribute](#contribute)
 - [License](#license)
 - [Credits](#credits)
 
+
 ## Install
 Install the package and its peer dependencies via npm:
 ```
-npm install d3
-npm install leaflet
-npm install @asymmetrik/leaflet-d3
-npm install @asymmetrik/ngx-leaflet
-npm install @asymmetrik/ngx-leaflet-d3
+npm install d3 leaflet @asymmetrik/leaflet-d3 @asymmetrik/ngx-leaflet @asymmetrik/ngx-leaflet-d3
 ```
 
 If you intend to use this library in a typescript project (utilizing the typings), you will need to also install the leaflet typings via npm:
 ```
-npm install @types/d3
-npm install @types/leaflet
+npm install @types/d3 @types/leaflet
 ```
 
-If you want to run the demo, clone the repository, perform an ```npm install```, ```gulp dev``` and then go to http://localhost:9000/src/demo/index.html
+If you want to run the demo, clone the repository, perform an ```npm install```, ```npm run demo``` and then go to http://localhost:4200
 
 
 ## Usage
@@ -195,12 +191,32 @@ setLeafletPingObserver(observer: Observer<any>) {
 private generatePings() {
 
 	this.leafletPingObserver.next({
-		data: [ 40, 50 ]
+		data: [ 40, 50 ]  // [ lng, lat ]
 	});
 
 	setTimeout(this.generatePings.bind(this), 100);
 }
 ```
+
+The data schema for pings is: 
+```js
+leafletPingObserver.next(pingData: LeafletPingEvent)
+
+class LeafletPingEvent {
+	data: [lng, lat];
+	cssClass?: string;
+}
+```
+
+
+## Changelog
+
+### 3.0.0
+- Angular 7 support
+- D3 5.x support
+- Started using the HtmlWebpackPlugin to generate the index.html file in the dist dir, so you don't need to add `/src/demo` to the end of the URL to hit the demo.
+- Migrated to npm scripts from gulp for build system
+- Upgrade to Webpack 4.x for demo
 
 
 ## Contribute
