@@ -3,6 +3,8 @@
 const
 	path = require('path'),
 	webpack = require('webpack'),
+	StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin,
+	HtmlWebpackPlugin = require('html-webpack-plugin'),
 
 	pkg = require('./package.json');
 
@@ -18,7 +20,7 @@ module.exports = () => {
 	 * Dev Server Configuration
 	 */
 	wpConfig.devServer = {
-		port: 9000,
+		port: 4200,
 		stats: {
 			modules: false,
 			colors: true
@@ -75,6 +77,13 @@ module.exports = () => {
 
 		// Configured loaders
 		rules: [
+
+			{
+				// Mark files inside `@angular/core` as using SystemJS style dynamic imports.
+				// Removing this will cause deprecation warnings to appear.
+				test: /[\/\\]@angular[\/\\]core[\/\\].+\.js$/,
+				parser: { system: true },  // enable SystemJS
+			},
 
 			// Typescript loader
 			{
@@ -134,13 +143,21 @@ module.exports = () => {
 	wpConfig.plugins.push(
 		new webpack.ProvidePlugin({
 			// Declare global libraries here (eg. D3, JQuery, etc)
-			'd3': 'd3',
-			'L': 'leaflet'
+		}),
+		// Stats writer generates a file with webpack stats that can be analyzed at https://chrisbateman.github.io/webpack-visualizer/
+		new StatsWriterPlugin({
+			chunkModules: true,
+			filename: 'webpack-stats.json',
+			fields: null
 		}),
 		new webpack.ContextReplacementPlugin(
 			/(.+)?angular(\\|\/)core(.+)?/,
 			path.posix.resolve('./src')
-		)
+		),
+		new HtmlWebpackPlugin({
+			template: path.posix.resolve('./src/demo/index.html'),
+			inject: 'body'
+		})
 	);
 
 	return wpConfig;
