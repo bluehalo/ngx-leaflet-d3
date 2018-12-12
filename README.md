@@ -7,7 +7,7 @@
 
 > @asymmetrik/leaflet-d3 extension to the @asymmetrik/ngx-leaflet package for Angular.io
 > Provides @asymmetrik/leaflet-d3 integration into Angular.io projects.
-> Compatible with Leaflet v1.x, @asymmetrik/leaflet-d3 v5.x, and d3 v5.x
+> Compatible with Leaflet v1.x, @asymmetrik/leaflet-d3 v4.x, and d3 v5.x
 
 > Now supports Angular v7, Ahead-of-Time compilation (AOT), and use in Angular-CLI based projects
 
