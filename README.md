@@ -29,8 +29,7 @@ npm install d3 leaflet @asymmetrik/leaflet-d3 @asymmetrik/ngx-leaflet @asymmetri
 
 If you intend to use this library in a typescript project (utilizing the typings), you will need to also install the leaflet typings via npm:
 ```
-npm install @types/d3
-npm install @types/leaflet
+npm install @types/d3 @types/leaflet
 ```
 
 If you want to run the demo, clone the repository, perform an ```npm install```, ```npm run demo``` and then go to http://localhost:4200
@@ -192,13 +191,22 @@ setLeafletPingObserver(observer: Observer<any>) {
 private generatePings() {
 
 	this.leafletPingObserver.next({
-		data: [ 40, 50 ]
+		data: [ 40, 50 ]  // [ lng, lat ]
 	});
 
 	setTimeout(this.generatePings.bind(this), 100);
 }
 ```
 
+The data schema for pings is: 
+```js
+leafletPingObserver.next(pingData: LeafletPingEvent)
+
+class LeafletPingEvent {
+	data: [lng, lat];
+	cssClass?: string;
+}
+```
 
 
 ## Changelog
