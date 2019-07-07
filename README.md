@@ -9,13 +9,12 @@
 > Provides @asymmetrik/leaflet-d3 integration into Angular.io projects.
 > Compatible with Leaflet v1.x, @asymmetrik/leaflet-d3 v4.x, and d3 v5.x
 
-> Now supports Angular v7, Ahead-of-Time compilation (AOT), and use in Angular-CLI based projects
+> Now supports Angular v8, Ahead-of-Time compilation (AOT), and use in Angular-CLI based projects
 
 ## Table of Contents
 - [Install](#install)
 - [Usage](#usage)
 - [API](#api)
-- [Changelog](#changelog)
 - [Contribute](#contribute)
 - [License](#license)
 - [Credits](#credits)
@@ -207,16 +206,6 @@ class LeafletPingEvent {
 	cssClass?: string;
 }
 ```
-
-
-## Changelog
-
-### 3.0.0
-- Angular 7 support
-- D3 5.x support
-- Started using the HtmlWebpackPlugin to generate the index.html file in the dist dir, so you don't need to add `/src/demo` to the end of the URL to hit the demo.
-- Migrated to npm scripts from gulp for build system
-- Upgrade to Webpack 4.x for demo
 
 
 ## Contribute
