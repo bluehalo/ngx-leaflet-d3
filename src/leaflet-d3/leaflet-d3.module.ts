@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
@@ -19,9 +19,5 @@ import { LeafletPingDirective } from './ping/leaflet-ping.directive';
 	]
 })
 export class LeafletD3Module {
-
-	static forRoot(): ModuleWithProviders {
-		return { ngModule: LeafletD3Module, providers: [] };
-	}
 
 }
