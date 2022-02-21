@@ -7,7 +7,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 // Local Imports
 import { LeafletD3DemoComponent } from './leaflet-d3-demo.component';
-import { LeafletD3Module } from '../../../leaflet-d3/leaflet-d3.module';
+import { LeafletD3Module } from '../../../projects/ngx-leaflet-d3/src/lib/leaflet-d3.module';
 
 @NgModule({
 	imports: [
