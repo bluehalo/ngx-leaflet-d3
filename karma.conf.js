@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/ngx-leaflet-demo'),
+      dir: require('path').join(__dirname, './coverage/ngx-leaflet-d3-demo'),
       subdir: '.',
       reporters: [
         { type: 'html' },

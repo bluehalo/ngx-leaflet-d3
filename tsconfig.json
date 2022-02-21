@@ -13,8 +13,7 @@
 	"sourceMap": true,
 	"paths": {
 	  "ngx-sentio": [
-		"dist/ngx-leaflet/ngx-leaflet",
-		"dist/ngx-leaflet"
+		"dist/ngx-leaflet-d3"
 	  ]
 	},
 	"declaration": false,
