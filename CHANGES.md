@@ -1,5 +1,9 @@
 # Changelog
 
+## 13.0.0
+- Angular 13
+- D3 7.x
+
 ## 6.0.0
 - Angular 10
 

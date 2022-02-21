@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 import * as L from 'leaflet';
 
-import './hexbin-demo.component.scss';
+import { Control, ControlOptions } from 'leaflet';
+import LayersOptions = Control.LayersOptions;
 
 @Component({
 	selector: 'hexbin-demo',
@@ -24,7 +25,7 @@ implements OnInit {
 	};
 
 	// Values to bind to Leaflet Directive
-	layersControlOptions = { position: 'bottomright' };
+	layersControlOptions: LayersOptions = { position: 'bottomright' };
 	baseLayers = {
 		'Open Street Map': this.LAYER_OSM.layer
 	};
@@ -32,6 +33,8 @@ implements OnInit {
 		zoom: 6,
 		center: L.latLng([ 46.879966, -121.726909 ])
 	};
+
+	count = 0;
 
 	// Generators for lat/lon values
 	generateLat = d3.randomNormal(this.options.center.lat, 1);
