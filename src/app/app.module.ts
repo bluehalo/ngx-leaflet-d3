@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { LeafletD3DemoModule } from './leaflet-d3/leaflet-d3-demo.module';
-
+import { LeafletD3DemoModule } from './leaflet-d3-demo/leaflet-d3-demo.module';
 
 @NgModule({
 	imports: [

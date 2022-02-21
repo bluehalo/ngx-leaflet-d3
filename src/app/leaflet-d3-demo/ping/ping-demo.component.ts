@@ -5,7 +5,8 @@ import { Observer } from 'rxjs';
 import * as d3 from 'd3';
 import * as L from 'leaflet';
 
-import './ping-demo.component.scss';
+import { Control } from 'leaflet';
+import LayersOptions = Control.LayersOptions;
 
 
 @Component({
@@ -26,7 +27,7 @@ export class PingDemoComponent {
 	};
 
 	// Values to bind to Leaflet Directive
-	layersControlOptions = { position: 'bottomright' };
+	layersControlOptions: LayersOptions = { position: 'bottomright' };
 	baseLayers = {
 		'Open Street Map': this.LAYER_OSM.layer
 	};

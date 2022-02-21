@@ -5,7 +5,7 @@ import * as L from 'leaflet';
 import '@asymmetrik/leaflet-d3';
 
 import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
-import { LeafletPingEvent } from '../../leaflet-d3/ping/leaflet-ping-event.model';
+import { LeafletPingEvent } from '../ping/leaflet-ping-event.model';
 
 @Directive({
 	selector: '[leafletPing]'
