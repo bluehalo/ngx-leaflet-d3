@@ -139,6 +139,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ngx-leaflet-d3"
+  }
 }
