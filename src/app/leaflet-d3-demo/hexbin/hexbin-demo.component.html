@@ -15,9 +15,9 @@
 		 [leafletBaseLayers]="baseLayers"
 		 [leafletLayersControlOptions]="layersControlOptions">
 
-		<div [leafletHexbin]="hexbinData1" [leafletHexbinOptions]="hexbinOptions1" (leafletHexbinLayerReady)="layerReady($event)" (leafletHexbinMouseover)="count = $event.length" (leafletHexbinMouseout)="count = 0"></div>
-		<div [leafletHexbin]="hexbinData2" [leafletHexbinOptions]="hexbinOptions2" (leafletHexbinLayerReady)="layerReady($event)" (leafletHexbinMouseover)="count = $event.length" (leafletHexbinMouseout)="count = 0"></div>
-		<div [leafletHexbin]="hexbinData3" [leafletHexbinOptions]="hexbinOptions3" (leafletHexbinLayerReady)="layerReady($event)" (leafletHexbinMouseover)="count = $event.length" (leafletHexbinMouseout)="count = 0"></div>
+		<div [leafletHexbin]="hexbinData1" [leafletHexbinOptions]="hexbinOptions1" (leafletHexbinLayerReady)="layerReady($event)" (leafletHexbinMouseover)="onMouseOver($event)" (leafletHexbinMouseout)="onMouseOut()"></div>
+		<div [leafletHexbin]="hexbinData2" [leafletHexbinOptions]="hexbinOptions2" (leafletHexbinLayerReady)="layerReady($event)" (leafletHexbinMouseover)="onMouseOver($event)" (leafletHexbinMouseout)="onMouseOut()"></div>
+		<div [leafletHexbin]="hexbinData3" [leafletHexbinOptions]="hexbinOptions3" (leafletHexbinLayerReady)="layerReady($event)" (leafletHexbinMouseover)="onMouseOver($event)" (leafletHexbinMouseout)="onMouseOut()"></div>
 
 	</div>
 

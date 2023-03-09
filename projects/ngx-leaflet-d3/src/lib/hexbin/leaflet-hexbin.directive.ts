@@ -47,20 +47,20 @@ export class LeafletHexbinDirective
 		this.layerReady.emit(this.hexbinLayer);
 
 		// register for the hexbin events
-		this.hexbinLayer.dispatch().on('mouseover', (p: any) => {
+		this.hexbinLayer.dispatch().on('mouseover', (event: any, data: any) => {
 			this.zone.run(() => {
-				this.hexbinMouseover.emit(p);
+				this.hexbinMouseover.emit({ event, data });
 			});
 
 		});
-		this.hexbinLayer.dispatch().on('mouseout', (p: any) => {
+		this.hexbinLayer.dispatch().on('mouseout', (event: any, data: any) => {
 			this.zone.run(() => {
-				this.hexbinMouseout.emit(p);
+				this.hexbinMouseout.emit({ event, data });
 			});
 		});
-		this.hexbinLayer.dispatch().on('click', (p: any) => {
+		this.hexbinLayer.dispatch().on('click', (event: any, data: any) => {
 			this.zone.run(() => {
-				this.hexbinClick.emit(p);
+				this.hexbinClick.emit({ event, data });
 			});
 		});
 
