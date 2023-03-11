@@ -11,10 +11,10 @@
   },
 
   "peerDependencies": {
-    "@angular/common": "14",
-    "@angular/core": "14",
+    "@angular/common": "15",
+    "@angular/core": "15",
     "@asymmetrik/leaflet-d3": "6",
-    "@asymmetrik/ngx-leaflet": "14",
+    "@asymmetrik/ngx-leaflet": "15",
     "d3": "7",
     "d3-hexbin": "0.2",
     "leaflet": "1"
