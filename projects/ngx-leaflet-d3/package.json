@@ -1,7 +1,7 @@
 {
   "name": "@asymmetrik/ngx-leaflet-d3",
   "description": "Angular.io D3 visualization components for Leaflet",
-  "version": "13.0.1",
+  "version": "14.0.0",
   "author": "Asymmetrik, Ltd.",
   "copyright": "Copyright Asymmetrik, A BlueHalo Company 2007-2022 - All Rights Reserved.",
   "license": "MIT",
@@ -11,10 +11,10 @@
   },
 
   "peerDependencies": {
-    "@angular/common": "13",
-    "@angular/core": "13",
+    "@angular/common": "14",
+    "@angular/core": "14",
     "@asymmetrik/leaflet-d3": "6",
-    "@asymmetrik/ngx-leaflet": "13",
+    "@asymmetrik/ngx-leaflet": "14",
     "d3": "7",
     "d3-hexbin": "0.2",
     "leaflet": "1"

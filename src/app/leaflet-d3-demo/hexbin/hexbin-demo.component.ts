@@ -35,6 +35,12 @@ implements OnInit {
 	};
 
 	count = 0;
+	onMouseOver = (e) => {
+		this.count = e.data.length;
+	};
+	onMouseOut = () => {
+		this.count = 0;
+	};
 
 	// Generators for lat/lon values
 	generateLat = d3.randomNormal(this.options.center.lat, 1);

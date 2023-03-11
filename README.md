@@ -9,7 +9,7 @@
 > Provides @asymmetrik/leaflet-d3 integration into Angular.io projects.
 > Compatible with Leaflet v1.x, @asymmetrik/leaflet-d3 v6.x, and d3 v7.x
 
-> Now supports Angular v13 and Ivy
+> Now supports Angular v14 and Ivy
 
 ## Table of Contents
 - [Install](#install)
