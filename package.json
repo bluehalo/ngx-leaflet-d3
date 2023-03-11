@@ -10,8 +10,8 @@
   "scripts": {
     "ng": "ng",
     "demo": "ng serve ngx-leaflet-d3-demo",
-    "build": "ng build --configuration production && copyfiles README.md LICENSE CHANGES.md ./dist/ngx-leaflet-d3",
-    "watch": "ng build --watch --configuration development",
+    "build": "ng build ngx-leaflet-d3 --configuration production && copyfiles README.md LICENSE CHANGES.md ./dist/ngx-leaflet-d3",
+    "watch": "ng build ngx-leaflet-d3 --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
