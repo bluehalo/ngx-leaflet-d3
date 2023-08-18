@@ -58,7 +58,7 @@ This attribute directive also acts as an input binding for the hexbin data array
 ```html
 <div leaflet style="height: 300px;"
 	 [leafletOptions]="options"
-	 [leafletHexbin]="hexbinData"
+	 [leafletHexbin]="hexbinData">
 </div>
 ```
 
