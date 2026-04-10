@@ -1,7 +1,7 @@
 {
   "name": "@bluehalo/ngx-leaflet-d3",
   "version": "0.0.0",
-  "copyright": "Copyright BlueHalo 2007-2026 - All Rights Reserved.",
+  "copyright": "Copyright (c) BlueHalo LLC",
   "license": "MIT",
   "repository": {
     "type": "git",

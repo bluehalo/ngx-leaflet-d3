@@ -3,7 +3,7 @@
   "description": "Angular D3 visualization components for Leaflet",
   "version": "21.0.0",
   "author": "BlueHalo",
-  "copyright": "Copyright BlueHalo 2007-2026 - All Rights Reserved.",
+  "copyright": "Copyright (c) BlueHalo LLC",
   "license": "MIT",
   "repository": {
     "type": "git",
