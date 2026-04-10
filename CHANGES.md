@@ -1,5 +1,14 @@
 # Changelog
 
+## 21.0.0
+- Angular 21
+- Migrated package to `@bluehalo/ngx-leaflet-d3` namespace (previously `@asymmetrik/ngx-leaflet-d3`)
+- Updated peer dependency `@asymmetrik/ngx-leaflet` → `@bluehalo/ngx-leaflet@21`
+- Updated peer dependency `@asymmetrik/leaflet-d3` → `@bluehalo/leaflet-d3@6`
+- Converted directives to standalone (`LeafletHexbinDirective`, `LeafletPingDirective`)
+- Fix: replace deprecated `Observable.create()` with `new Observable()`
+- CI: replace Travis CI with GitHub Actions
+
 ## 14.0.0
 - Angular 14
 

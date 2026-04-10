@@ -1,48 +1,48 @@
 {
-  "name": "@asymmetrik/ngx-leaflet-d3",
+  "name": "@bluehalo/ngx-leaflet-d3",
   "version": "0.0.0",
-  "copyright": "Copyright BlueHalo 2007-2023 - All Rights Reserved.",
+  "copyright": "Copyright BlueHalo 2007-2026 - All Rights Reserved.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Asymmetrik/ngx-leaflet-d3.git"
+    "url": "https://github.com/bluehalo/ngx-leaflet-d3.git"
   },
   "scripts": {
     "ng": "ng",
     "demo": "ng serve ngx-leaflet-d3-demo",
-    "build": "ng build ngx-leaflet-d3 --configuration production && copyfiles README.md LICENSE CHANGES.md ./dist/ngx-leaflet-d3",
+    "build": "ng build ngx-leaflet-d3 --configuration production && node -e \"const fs=require('fs'),d='./dist/ngx-leaflet-d3',p=d+'/'+JSON.parse(fs.readFileSync(d+'/package.json','utf8')).typings;fs.writeFileSync(p,'/// <reference types=\\\"@bluehalo/leaflet-d3\\\" />\\n'+fs.readFileSync(p,'utf8'))\" && copyfiles README.md LICENSE CHANGES.md ./dist/ngx-leaflet-d3",
     "watch": "ng build ngx-leaflet-d3 --watch --configuration development",
     "test": "ng test",
-    "update": "ng update @angular/core@15 @angular/cli@15"
+    "update": "ng update @angular/core@21 @angular/cli@21"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "15.2.2",
-    "@angular/common": "15.2.2",
-    "@angular/compiler": "15.2.2",
-    "@angular/core": "15.2.2",
-    "@angular/forms": "15.2.2",
-    "@angular/platform-browser": "15.2.2",
-    "@angular/platform-browser-dynamic": "15.2.2",
-    "@angular/router": "15.2.2",
-    "@asymmetrik/leaflet-d3": "6",
-    "@asymmetrik/ngx-leaflet": "15",
+    "@angular/animations": "21.2.8",
+    "@angular/common": "21.2.8",
+    "@angular/compiler": "21.2.8",
+    "@angular/core": "21.2.8",
+    "@angular/forms": "21.2.8",
+    "@angular/platform-browser": "21.2.8",
+    "@angular/platform-browser-dynamic": "21.2.8",
+    "@angular/router": "21.2.8",
+    "@bluehalo/leaflet-d3": "6",
+    "@bluehalo/ngx-leaflet": "21",
     "bootstrap": "^4.6.1",
     "d3": "7",
     "d3-hexbin": "0.2",
     "leaflet": "1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.15.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "15.2.2",
-    "@angular/cli": "15.2.2",
-    "@angular/compiler-cli": "15.2.2",
+    "@angular-devkit/build-angular": "21.2.7",
+    "@angular/cli": "21.2.7",
+    "@angular/compiler-cli": "21.2.8",
     "@types/d3": "7",
     "@types/jasmine": "~3.10.0",
     "@types/leaflet": "1",
-    "@types/node": "16",
+    "@types/node": "^22.19.17",
     "copyfiles": "^2.4.1",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
@@ -50,7 +50,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "ng-packagr": "15.2.2",
-    "typescript": "4.9.5"
+    "ng-packagr": "21.2.2",
+    "typescript": "5.9.3"
   }
 }

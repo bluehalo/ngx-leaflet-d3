@@ -2,13 +2,14 @@ import { Directive, EventEmitter, Input, NgZone, OnInit, Output } from '@angular
 
 import { Observable, Observer } from 'rxjs';
 import * as L from 'leaflet';
-import '@asymmetrik/leaflet-d3';
+import '@bluehalo/leaflet-d3';
 
-import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
+import { LeafletDirective, LeafletDirectiveWrapper } from '@bluehalo/ngx-leaflet';
 import { LeafletPingEvent } from '../ping/leaflet-ping-event.model';
 
 @Directive({
-	selector: '[leafletPing]'
+    selector: '[leafletPing]',
+    standalone: true
 })
 export class LeafletPingDirective
 	implements OnInit {
@@ -39,19 +40,16 @@ export class LeafletPingDirective
 			this.pingLayer = L.pingLayer(this.pingOptions).addTo(map);
 
 			// Handle incoming ping events
-			this.pingSource = Observable.create((observer: Observer<LeafletPingEvent>) => {
-					this.pingObserver = observer;
-					this.pingObserverReady.emit(this.pingObserver);
-				})
-				.subscribe(
-					(event: LeafletPingEvent) => {
+			this.pingSource = new Observable<LeafletPingEvent>((observer: Observer<LeafletPingEvent>) => {
+				this.pingObserver = observer;
+				this.pingObserverReady.emit(this.pingObserver);
+			});
 
-						if (null != event) {
-							this.ping(event.data, event.cssClass);
-						}
-
-					}
-				);
+			this.pingSource.subscribe((event: LeafletPingEvent) => {
+				if (null != event) {
+					this.ping(event.data, event.cssClass);
+				}
+			});
 
 		});
 

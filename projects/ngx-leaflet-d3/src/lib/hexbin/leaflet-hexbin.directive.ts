@@ -1,13 +1,14 @@
 import { Directive, EventEmitter, Input, NgZone, OnChanges, OnInit, Output, SimpleChange } from '@angular/core';
 
 import * as L from 'leaflet';
-import '@asymmetrik/leaflet-d3';
+import '@bluehalo/leaflet-d3';
 
-import { LeafletDirective, LeafletDirectiveWrapper } from '@asymmetrik/ngx-leaflet';
+import { LeafletDirective, LeafletDirectiveWrapper } from '@bluehalo/ngx-leaflet';
 
 
 @Directive({
-	selector: '[leafletHexbin]'
+    selector: '[leafletHexbin]',
+    standalone: true
 })
 export class LeafletHexbinDirective
 	implements OnChanges, OnInit {

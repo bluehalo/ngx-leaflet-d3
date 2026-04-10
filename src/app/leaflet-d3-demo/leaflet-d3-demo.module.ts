@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HexbinDemoComponent } from './hexbin/hexbin-demo.component';
 import { PingDemoComponent } from './ping/ping-demo.component';
 
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletModule } from '@bluehalo/ngx-leaflet';
 
 // Local Imports
 import { LeafletD3DemoComponent } from './leaflet-d3-demo.component';

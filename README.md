@@ -1,15 +1,12 @@
-# @asymmetrik/ngx-leaflet-d3
+# @bluehalo/ngx-leaflet-d3
 
-[![Build Status][travis-image]][travis-url]
+[![CI](https://github.com/bluehalo/ngx-leaflet-d3/actions/workflows/ci.yml/badge.svg)](https://github.com/bluehalo/ngx-leaflet-d3/actions/workflows/ci.yml)
 
-[travis-url]: https://travis-ci.org/Asymmetrik/ngx-leaflet-d3/
-[travis-image]: https://travis-ci.org/Asymmetrik/ngx-leaflet-d3.svg
+> [@bluehalo/leaflet-d3](https://github.com/bluehalo/leaflet-d3) extension to the [@bluehalo/ngx-leaflet](https://github.com/bluehalo/ngx-leaflet) package for Angular.
+> Provides D3 visualization layer integration (hexbins, pings) into Angular projects.
+> Compatible with Leaflet v1.x, @bluehalo/leaflet-d3 v6.x, and D3 v7.x
 
-> @asymmetrik/leaflet-d3 extension to the @asymmetrik/ngx-leaflet package for Angular.io
-> Provides @asymmetrik/leaflet-d3 integration into Angular.io projects.
-> Compatible with Leaflet v1.x, @asymmetrik/leaflet-d3 v6.x, and d3 v7.x
-
-> Now supports Angular v15 and Ivy
+> Supports Angular v21 with standalone directives
 
 ## Table of Contents
 - [Install](#install)
@@ -23,7 +20,7 @@
 ## Install
 Install the package and its peer dependencies via npm:
 ```
-npm install d3 leaflet @asymmetrik/leaflet-d3 @asymmetrik/ngx-leaflet @asymmetrik/ngx-leaflet-d3
+npm install d3 d3-hexbin leaflet @bluehalo/leaflet-d3 @bluehalo/ngx-leaflet @bluehalo/ngx-leaflet-d3
 ```
 
 If you intend to use this library in a typescript project (utilizing the typings), you will need to also install the leaflet typings via npm:
@@ -35,7 +32,7 @@ If you want to run the demo, clone the repository, perform an ```npm install```,
 
 
 ## Usage
-This plugin is used with the [Angular.io Leaflet plugin](https://github.com/Asymmetrik/ngx-leaflet).
+This plugin is used with the [Angular.io Leaflet plugin](https://github.com/bluehalo/ngx-leaflet).
 
 ### Hexbins
 Hexbins allow you to aggregate data into bins with a hexagon geometry.
@@ -93,7 +90,7 @@ hexbinData2: [ number, number ][] = [...];
 > This means that all bound data structures must be treated as immutable.
 > For changes to be detected, instance equality must change.
 
-See the README for @asymmetrik/leaflet-d3 for details regarding the default options and default data schema.
+See the README for @bluehalo/leaflet-d3 for details regarding the default options and default data schema.
 
 
 ### Pings
@@ -133,19 +130,19 @@ They are documented and demonstrated below.
 Input binding for the data array that is aggregated by the hexbins.
 
 #### leafletHexbinOptions
-Input binding for hexbin options (see [Leaflet D3's](https://github.com/Asymmetrik/leaflet-d3) docs).
+Input binding for hexbin options (see [Leaflet D3's](https://github.com/bluehalo/leaflet-d3) docs).
 This allows you to set some basic settings for the hexbin layer.
 
 #### leafletHexbinMouseover
-Event emitter/output binding for hexbin mouseover event (see [Leaflet D3's](https://github.com/Asymmetrik/leaflet-d3) docs).
+Event emitter/output binding for hexbin mouseover event (see [Leaflet D3's](https://github.com/bluehalo/leaflet-d3) docs).
 This event is fired when the mouse hovers over a hexbin.
 
 #### leafletHexbinMouseout
-Event emitter/output binding for hexbin mouseout event (see [Leaflet D3's](https://github.com/Asymmetrik/leaflet-d3) docs).
+Event emitter/output binding for hexbin mouseout event (see [Leaflet D3's](https://github.com/bluehalo/leaflet-d3) docs).
 This event is fired when the mouse leaves a hexbin.
 
 #### leafletHexbinClick
-Event emitter/output binding for hexbin click event (see [Leaflet D3's](https://github.com/Asymmetrik/leaflet-d3) docs).
+Event emitter/output binding for hexbin click event (see [Leaflet D3's](https://github.com/bluehalo/leaflet-d3) docs).
 This event is fired when the mouse clicks on a hexbin.
 
 #### leafletHexbinLayerReady
@@ -171,7 +168,7 @@ They are documented and demonstrated below.
 This is the directive attribute that activates the directive.
 
 #### leafletPingOptions
-Input binding for the leaflet ping layer options (see [Leaflet D3's](https://github.com/Asymmetrik/leaflet-d3) docs).
+Input binding for the leaflet ping layer options (see [Leaflet D3's](https://github.com/bluehalo/leaflet-d3) docs).
 
 #### leafletPingObserver
 Event emitter/output binding for ping layer observer.
@@ -209,7 +206,7 @@ class LeafletPingEvent {
 
 
 ## Contribute
-PRs accepted. If you are part of Asymmetrik, please make contributions on feature branches off of the ```develop``` branch. If you are outside of Asymmetrik, please fork our repo to make contributions.
+PRs accepted. Please make contributions on feature branches and open a pull request against ```master```.
 
 
 ## License

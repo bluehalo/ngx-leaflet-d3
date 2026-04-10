@@ -7,8 +7,9 @@ import { Control, ControlOptions } from 'leaflet';
 import LayersOptions = Control.LayersOptions;
 
 @Component({
-	selector: 'hexbin-demo',
-	templateUrl: './hexbin-demo.component.html'
+    selector: 'hexbin-demo',
+    templateUrl: './hexbin-demo.component.html',
+    standalone: false
 })
 export class HexbinDemoComponent
 implements OnInit {

@@ -10,8 +10,9 @@ import LayersOptions = Control.LayersOptions;
 
 
 @Component({
-	selector: 'ping-demo',
-	templateUrl: './ping-demo.component.html'
+    selector: 'ping-demo',
+    templateUrl: './ping-demo.component.html',
+    standalone: false
 })
 export class PingDemoComponent {
 

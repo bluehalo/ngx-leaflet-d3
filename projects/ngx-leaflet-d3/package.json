@@ -1,20 +1,20 @@
 {
-  "name": "@asymmetrik/ngx-leaflet-d3",
-  "description": "Angular.io D3 visualization components for Leaflet",
-  "version": "15.0.0",
-  "author": "Asymmetrik, Ltd.",
-  "copyright": "Copyright BlueHalo 2007-2023 - All Rights Reserved.",
+  "name": "@bluehalo/ngx-leaflet-d3",
+  "description": "Angular D3 visualization components for Leaflet",
+  "version": "21.0.0",
+  "author": "BlueHalo",
+  "copyright": "Copyright BlueHalo 2007-2026 - All Rights Reserved.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Asymmetrik/ngx-leaflet-d3.git"
+    "url": "https://github.com/bluehalo/ngx-leaflet-d3.git"
   },
 
   "peerDependencies": {
-    "@angular/common": "15",
-    "@angular/core": "15",
-    "@asymmetrik/leaflet-d3": "6",
-    "@asymmetrik/ngx-leaflet": "15",
+    "@angular/common": "21",
+    "@angular/core": "21",
+    "@bluehalo/leaflet-d3": "6",
+    "@bluehalo/ngx-leaflet": "21",
     "d3": "7",
     "d3-hexbin": "0.2",
     "leaflet": "1"
