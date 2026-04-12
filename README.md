@@ -1,6 +1,7 @@
 # @bluehalo/ngx-leaflet-d3
 
 [![CI](https://github.com/bluehalo/ngx-leaflet-d3/actions/workflows/ci.yml/badge.svg)](https://github.com/bluehalo/ngx-leaflet-d3/actions/workflows/ci.yml)
+[![Code Coverage](https://codecov.io/gh/bluehalo/ngx-leaflet-d3/graph/badge.svg)](https://codecov.io/gh/bluehalo/ngx-leaflet-d3)
 
 > [@bluehalo/leaflet-d3](https://github.com/bluehalo/leaflet-d3) extension to the [@bluehalo/ngx-leaflet](https://github.com/bluehalo/ngx-leaflet) package for Angular.
 > Provides D3 visualization layer integration (hexbins, pings) into Angular projects.

@@ -12,7 +12,7 @@
     "demo": "ng serve ngx-leaflet-d3-demo",
     "build": "ng build ngx-leaflet-d3 --configuration production && node -e \"const fs=require('fs'),d='./dist/ngx-leaflet-d3',p=d+'/'+JSON.parse(fs.readFileSync(d+'/package.json','utf8')).typings;fs.writeFileSync(p,'/// <reference types=\\\"@bluehalo/leaflet-d3\\\" />\\n'+fs.readFileSync(p,'utf8'))\" && copyfiles README.md LICENSE CHANGES.md ./dist/ngx-leaflet-d3",
     "watch": "ng build ngx-leaflet-d3 --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test ngx-leaflet-d3",
     "update": "ng update @angular/core@21 @angular/cli@21"
   },
   "private": true,
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "21.2.7",
+    "@angular/build": "^21.2.7",
     "@angular/cli": "21.2.7",
     "@angular/compiler-cli": "21.2.8",
     "@types/d3": "7",

@@ -130,11 +130,16 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:karma",
           "options": {
             "main": "projects/ngx-leaflet-d3/src/test.ts",
             "tsConfig": "projects/ngx-leaflet-d3/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-leaflet-d3/karma.conf.js"
+            "karmaConfig": "projects/ngx-leaflet-d3/karma.conf.js",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "codeCoverage": true
           }
         }
       }
