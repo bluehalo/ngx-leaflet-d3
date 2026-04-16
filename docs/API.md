@@ -1,6 +1,6 @@
 # @bluehalo/ngx-leaflet-d3 — API Reference
 
-> Full API reference for the hexbin and ping directives. For installation and quick-start usage, see the [README](../README.md).
+> Full API reference. For installation and quick-start usage, see the [README](../README.md).
 
 ## Hexbins
 There are several input and output bindings for the hexbin layer.
