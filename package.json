@@ -31,12 +31,11 @@
     "d3": "7",
     "d3-hexbin": "0.2",
     "leaflet": "1",
-    "rxjs": "~7.5.0",
+    "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.1"
+    "zone.js": "~0.16.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "21.2.7",
     "@angular/build": "^21.2.7",
     "@angular/cli": "21.2.7",
     "@angular/compiler-cli": "21.2.8",
