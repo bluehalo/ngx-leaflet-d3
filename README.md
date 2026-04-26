@@ -1,5 +1,6 @@
 # @bluehalo/ngx-leaflet-d3
 
+[![NPM version](https://img.shields.io/npm/v/%40bluehalo%2Fngx-leaflet-d3)](https://www.npmjs.com/package/@bluehalo/ngx-leaflet-d3)
 [![CI](https://github.com/bluehalo/ngx-leaflet-d3/actions/workflows/ci.yml/badge.svg)](https://github.com/bluehalo/ngx-leaflet-d3/actions/workflows/ci.yml)
 [![Code Coverage](https://codecov.io/gh/bluehalo/ngx-leaflet-d3/graph/badge.svg)](https://codecov.io/gh/bluehalo/ngx-leaflet-d3)
 
