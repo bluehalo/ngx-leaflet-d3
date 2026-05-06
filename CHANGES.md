@@ -1,5 +1,11 @@
 # Changelog
 
+## 21.0.1
+- Docs: restructured README — extracted API reference to docs/
+- Demo: upgraded Bootstrap 4 → 5 (closes #62)
+- CI: upgraded to Node 24, actions/checkout and actions/setup-node to v6; migrated builders to @angular/build; added Codecov integration
+- Chore: updated copyright to BlueHalo LLC; package.json consistency fixes; disabled CLI analytics telemetry; added npm version badge
+
 ## 21.0.0
 - Angular 21
 - Migrated package to `@bluehalo/ngx-leaflet-d3` namespace (previously `@asymmetrik/ngx-leaflet-d3`)
