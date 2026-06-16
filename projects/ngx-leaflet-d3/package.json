@@ -1,7 +1,7 @@
 {
   "name": "@bluehalo/ngx-leaflet-d3",
   "description": "Angular D3 visualization components for Leaflet",
-  "version": "21.0.1",
+  "version": "22.0.0",
   "author": "BlueHalo",
   "copyright": "Copyright (c) BlueHalo LLC",
   "license": "MIT",
@@ -11,10 +11,10 @@
   },
 
   "peerDependencies": {
-    "@angular/common": "21",
-    "@angular/core": "21",
+    "@angular/common": "22",
+    "@angular/core": "22",
     "@bluehalo/leaflet-d3": "6",
-    "@bluehalo/ngx-leaflet": "21",
+    "@bluehalo/ngx-leaflet": "22",
     "d3": "7",
     "d3-hexbin": "0.2",
     "leaflet": "1"

@@ -1,5 +1,8 @@
 # Changelog
 
+## 22.0.0
+Support for Angular.io 22.
+
 ## 21.0.1
 - Docs: restructured README — extracted API reference to docs/
 - Demo: upgraded Bootstrap 4 → 5 (closes #62)

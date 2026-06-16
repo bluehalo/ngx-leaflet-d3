@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import * as d3 from 'd3';
 import * as L from 'leaflet';
@@ -9,6 +9,7 @@ import LayersOptions = Control.LayersOptions;
 @Component({
     selector: 'hexbin-demo',
     templateUrl: './hexbin-demo.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class HexbinDemoComponent

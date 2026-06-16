@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { Observer } from 'rxjs';
 
@@ -12,6 +12,7 @@ import LayersOptions = Control.LayersOptions;
 @Component({
     selector: 'ping-demo',
     templateUrl: './ping-demo.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PingDemoComponent {
